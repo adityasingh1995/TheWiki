@@ -1,0 +1,13 @@
+{% extends 'base_hist.html'%}
+{% block content %}
+<table cellpadding="10">
+    {% for p in plist %}
+        <tr>
+            <td>{{p.lastmod}}</td>
+            <td>{{p.content[0:100]}}</td>
+            <td><a class="login-link" href="/_edit/{{name}}?page_id={{p.key().id()}}">edit</a></td>
+            <td><a class="login-link" href="/{{name}}?page_id={{p.key().id()}}">view</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
